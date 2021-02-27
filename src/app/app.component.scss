@@ -1,0 +1,16 @@
+.card {
+  padding: 25px;
+  margin-bottom: 20px;
+  border: initial;
+  background: #fff;
+  border-radius: calc(0.15rem - 1px);
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.04), 0 1px 6px rgba(0, 0, 0, 0.04);
+}
+
+.active {
+  background-color: #007bff;
+  a {
+    color: white;
+  }
+  transition: all 0.2s ease-in-out;
+}

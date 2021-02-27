@@ -1,0 +1,11 @@
+<form class="form mb-4" (submit)="onSubmit($event)">
+  <input
+    #inputAdd
+    type="text"
+    class="form-control add-task"
+    placeholder="New Task..."
+  />
+  <button class="btn btn-primary ml-4" (click)="addTodo(inputAdd.value)">
+    Add item
+  </button>
+</form>

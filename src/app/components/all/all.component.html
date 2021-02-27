@@ -1,0 +1,7 @@
+<app-add-todo (sendTodo)="receiveTodo($event)"></app-add-todo>
+<app-todo
+  [todos]="todos"
+  (editMessage)="editMessages($event)"
+  (removeMessage)="removeMessage($event)"
+  (sendCompleted)="receiveCompleted($event)"
+></app-todo>

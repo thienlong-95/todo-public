@@ -1,0 +1,43 @@
+<div class="todo-list">
+  <div class="todo-item" *ngFor="let todo of todos">
+    <label class="container1">
+      <input
+        type="checkbox"
+        name="checkBox"
+        [checked]="todo.completed"
+        (change)="completeTodo(todo.id, todo.completed)"
+        [disabled]="complete || active"
+      />
+      <span class="checkmark"></span>
+    </label>
+    <span class="title" [class.active]="todo.completed === true">{{
+      todo.title
+    }}</span>
+    <div class="form-group form-edit" *ngIf="todo.open">
+      <input
+        type="text"
+        class="input-edit form-control"
+        [(ngModel)]="titleEdit"
+      />
+      <button class="btn btn-done btn-grey" (click)="sendEditTodo(todo.id)">
+        Done
+      </button>
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-edit btn-grey"
+      (click)="editTodo(todo.id)"
+      [disabled]="complete || active"
+    >
+      Edit
+    </button>
+
+    <ngbd-modal-config
+      [complete]="complete"
+      [active]="active"
+      [id]="todo.id"
+      (todoId)="removeTodo($event)"
+    ></ngbd-modal-config>
+  </div>
+</div>
